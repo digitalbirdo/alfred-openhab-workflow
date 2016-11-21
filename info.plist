@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>net.digitalbird.alfred-openhab</string>
+	<key>category</key>
+	<string>Internet</string>
+	<key>connections</key>
+	<dict>
+		<key>630272D9-35B1-4209-A05D-0327F1D8E3F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A5C53532-7890-4022-8EFE-C225D633EB37</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8E79769F-960C-4E78-9D67-AD01E87D2677</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>630272D9-35B1-4209-A05D-0327F1D8E3F6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Tobias Finke</string>
+	<key>description</key>
+	<string>Control Openhab with Alfred</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Openhab</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python openhab.py action {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>630272D9-35B1-4209-A05D-0327F1D8E3F6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>116</integer>
+				<key>keyword</key>
+				<string>oh</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Bitte warten...</string>
+				<key>script</key>
+				<string>python openhab.py select "{query}"</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Switch Ligths</string>
+				<key>title</key>
+				<string>Control your SmartHome</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8E79769F-960C-4E78-9D67-AD01E87D2677</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>Command has been executed!</string>
+				<key>title</key>
+				<string>Openhab</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A5C53532-7890-4022-8EFE-C225D633EB37</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>This workflow can control openhab.
+Currently only ON/OFF Commands are sent.
+
+Parameters:
+
+Name        | Value
+--------------------------------
+OH_HOST     | IP Address of Openhab
+OH_PORT     | Port on which Openhab is running
+OH_USER     | User for Openhab (Empty if no Password)
+OH_PASSWORD | Password for Openhab (Empty if no Password)
+
+
+Example Item Declaration:
+
+Name               | Value
+--------------------------------
+&lt;Label for Alfred&gt; | &lt;itemname in the Openhab Sitemap&gt;
+Bett               | hueSwitchBett
+Decke              | hueSwitchDecke
+Leds               | hueSwitchLeds
+Leinwand           | leinwand
+Sofa               | hueSwitchSofa
+Leuchte            | tobi_C_turm</string>
+	<key>uidata</key>
+	<dict>
+		<key>630272D9-35B1-4209-A05D-0327F1D8E3F6</key>
+		<dict>
+			<key>xpos</key>
+			<integer>500</integer>
+			<key>ypos</key>
+			<real>10.0</real>
+		</dict>
+		<key>8E79769F-960C-4E78-9D67-AD01E87D2677</key>
+		<dict>
+			<key>xpos</key>
+			<integer>300</integer>
+			<key>ypos</key>
+			<real>10.0</real>
+		</dict>
+		<key>A5C53532-7890-4022-8EFE-C225D633EB37</key>
+		<dict>
+			<key>xpos</key>
+			<integer>700</integer>
+			<key>ypos</key>
+			<real>10.0</real>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<dict>
+		<key>Bett</key>
+		<string>hueSwitchBett</string>
+		<key>Decke</key>
+		<string>hueSwitchDecke</string>
+		<key>Leds</key>
+		<string>hueSwitchLeds</string>
+		<key>Leinwand</key>
+		<string>leinwand</string>
+		<key>Leuchte</key>
+		<string>tobi_C_turm</string>
+		<key>OH_HOST</key>
+		<string>192.168.1.23</string>
+		<key>OH_PASSWORD</key>
+		<string></string>
+		<key>OH_PORT</key>
+		<string>8080</string>
+		<key>OH_USER</key>
+		<string></string>
+		<key>Sofa</key>
+		<string>hueSwitchSofa</string>
+	</dict>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://github.com/digitalbirdo/alfred-openhab-workflow</string>
+</dict>
+</plist>
