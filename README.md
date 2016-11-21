@@ -3,8 +3,8 @@ Workflow to control openhab from Alfred
 
 ![Openhab Workflow](./screenshot.png "Openhab Workflow")
 
-## Installation
-* Download [Workflow](https://raw.githubusercontent.com/digitalbirdo/alfred-openhab-workflow/master/Openhab-1.0.0.alfredworkflow)
+## Download
+[Openhab-1.0.0.alfredworkflow](https://raw.githubusercontent.com/digitalbirdo/alfred-openhab-workflow/master/Openhab-1.0.0.alfredworkflow)
 
 ## Configuration
 The workflow initializes itself if no Workflow Environment Variables were set inside the workflow settings in Alfred before the first execution. (See [Using Variables in Workflows](https://www.alfredapp.com/help/workflows/advanced/variables/) for more details)
@@ -27,12 +27,12 @@ A sample Configuration will be provided when no own items are configured and the
 
 ## Licencing & thanks
 
-This workflow is released under the [MIT Licence](https://raw.githubusercontent.com/digitalbirdo/alfred-openhab-workflow/master/LICENCE.md).
+This workflow is released under the [MIT Licence](https://github.com/digitalbirdo/alfred-openhab-workflow/blob/master/LICENSE.md).
 
 It uses the following libraries and resources:
 
-* [workflow](https://github.com/deanishe/alfred-workflow) (MIT Licence) by deanishe for the workflow stuff.
+* [Alfred-Workflow](https://github.com/deanishe/alfred-workflow) (MIT Licence) by deanishe for the workflow stuff.
 * [Alfred Workflow Builder](https://gist.github.com/deanishe/b16f018119ef3fe951af) (MIT Licence) by deanishe. Build Alfred Workflows into .alfredworkflow (zip) files
-* [requests](https://github.com/kennethreitz/requests) (Apache License, Version 2.0) for the REST-API
+* [Requests](https://github.com/kennethreitz/requests) (Apache License, Version 2.0) for the REST-API
 * [Openhab REST-API Examples](https://github.com/openhab/openhab/wiki/Samples-REST) from Openhab Wiki
 * The icon from [Openhab](https://github.com/openhab/openhab) (Eclipse Public License - v 1.0)
