@@ -69,6 +69,20 @@ class Openhab:
                 "Authorization" : "Basic %s" %self.auth,
                 "Content-type": "text/plain"}
 
+    def get_allSwitchItems(self):
+        """ Get tha status of an item which is key"""
+        url = 'http://%s:%s/rest/items/?type=json'%(os.getenv('OH_HOST'),
+                                    os.getenv('OH_PORT'))
+        req = requests.get(url)
+        if req.status_code != requests.codes.ok:
+            req.raise_for_status() 
+        #wf.logger.debug(req.json())
+        switchItems = {}
+        for x in req.json()['item']:
+            if x['type'].encode('utf8') in 'SwitchItem':
+                switchItems[x['name'].encode('utf8')] = x['name'].encode('utf8')
+        return switchItems
+
 __usage__ = """openhab.py [options] <action> [<query>]
 
 Usage:
@@ -140,9 +154,16 @@ def main(wf):
         info['variables']['OH_PASSWORD'] = ''
         os.environ['OH_PASSWORD'] = info['variables']['OH_PASSWORD'] 
 
-    writePlist(info, 'info.plist')
-
     items = []
+
+    # Load all switch items if there are no items configured yet
+    if len(info['variables'].keys()) <= 4:
+	    oh=Openhab()
+	    switches = oh.get_allSwitchItems()
+	    for switch in switches.keys():
+	    	info['variables'][switch] = switch
+
+    writePlist(info, 'info.plist')
 
     for itemlabel in info['variables'].keys():
         if itemlabel.startswith( "OH_") is False:
