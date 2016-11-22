@@ -6,6 +6,14 @@ Workflow to control openhab from Alfred
 ## Download
 [Openhab-1.0.0.alfredworkflow](https://raw.githubusercontent.com/digitalbirdo/alfred-openhab-workflow/master/Openhab-1.0.0.alfredworkflow)
 
+## Changelog
+### [not yet released](https://raw.githubusercontent.com/digitalbirdo/alfred-openhab-workflow/master)
+* Autoload all available switch items when config is empty
+
+### [1.0.0](https://raw.githubusercontent.com/digitalbirdo/alfred-openhab-workflow/master/Openhab-1.0.0.alfredworkflow)
+* Initial Creation
+
+
 ## Configuration
 The workflow initializes itself if no Workflow Environment Variables were set inside the workflow settings in Alfred before the first execution. (See [Using Variables in Workflows](https://www.alfredapp.com/help/workflows/advanced/variables/) for more details)
 
@@ -19,10 +27,10 @@ The following variables have to be set according to the Openhab installation:
 Own Switches can also be added through the Alfred settings.
 The `Name` of the variable in the Alfred settings will be the `Label` which is later shown in the alfred dialog and the `Value` has to match to an `itemname` which has to be present in your Openhab sitemap.
 
-A sample Configuration will be provided when no own items are configured and the workflow is executed.
+If no items are configured, the default sitemap will be scanned for all available switch items which are then added automatically.
 
 ## TODO's
-* Parsing of the sitemap for all available switch items
+* Load the Label of the items from the sitemap
 * Support for other Items (e.g. Dimmer, ColorPicker, ...)
 
 ## Licencing & thanks
